@@ -1,0 +1,85 @@
+GET http://localhost:5050/posts
+
+
+#####
+POST http://localhost:5050/posts/create HTTP/1.1
+Content-Type: application/json
+
+
+{
+
+    "category": "fantasy",
+    "title": "Post referencing",
+    "cover": "https://www.italia.it/content/dam/tdh/it/interests/lazio/roma/8-cose-imperdibili-per-vivere-il-natale-di-roma-da-veri-local/media/1600X1000_8_cose_imperdibili_natale_di_roma_hero.jpg",
+    "readTime": {
+        "value": 30,
+        "unit": "minutes"
+    },
+    "author": "64b97f9730367eea29048f94",
+    "content": "Lorem ipsum dolor sit amet..."
+}
+//POST nuova richiesta con id modificato
+
+######
+
+GET  http://localhost:5050/posts/64aed71f53d44dfda57b821e
+
+#####
+PUT  http://localhost:5050/author/64aed71f53d44dfda57b821e  HTTP/1.1
+Content-Type: application/json
+
+
+{
+    
+    "category": "Getting Started",
+    "title": "From 'Hello World' to Getting Hired as Software Engineer: Strive School meets Mimo",
+    "cover": "https://i.imgur.com/DZf0S5G.jpg",
+    "author": {
+      "name": "Andrea Lauro",
+      "avatar": "https://imgur.com/ZsavJxA.jpg"
+    },
+    "content": "<div class='py-5 blog-content'><p>We're thrilled to announce we're teaming up with <a href='https://getmimo.com/'>Mimo</a> to launch our next Web Engineering program starting on February 1, 2021.</p><p>Mimo is the most popular code-learning app, helping millions of learners make their first steps with programming.</p><p>Since the first time we talked, we realised we have been in fact working in the very same direction: democratising access to become a software engineer.</p><p>We're now teaming up to help those in their community that have realised they truly love programming and aspire to become professionals - able to work as software engineers and transform a hobby and passion in their profession.</p><p>Democratising access to opportunity - either by making it simple to move the first steps and explore the world of programming as Mimo does, or by helping people go pro as we do at Strive School - is what makes both teams excited.</p><ul><li>Download Mimo for <a href='https://itunes.apple.com/us/app/mimo-learn-how-to-code-through/id1133960732?mt=8&amp;at=1000lpyT'>iOS</a> or <a href='https://play.google.com/store/apps/details?id=com.getmimo'>Android</a> here.</li><li><a href='https://strive.school/'>Apply here</a> to our next Web Engineering cohort.",
+    "rate": 5
+  }
+
+  //PUT aggiornamento 
+
+#####
+PATCH http://localhost:5050/author/64aed71f53d44dfda57b821e HTTP/1.1
+Content-Type: application/json
+
+{
+ "category": "Getting Started prova",
+    "title": "From 'Hello World' to Getting Hired as Software Engineer: Strive School meets Mimo",
+    "cover": "https://i.imgur.com/DZf0S5G.jpg",
+    "author": {
+      "name": "AndreaLauro",
+      "avatar": "https://imgur.com/ZsavJxA.jpg"
+    },
+    "content": "<div class='py-5 blog-content'><p>We're thrilled to announce we're teaming up with <a href='https://getmimo.com/'>Mimo</a> to launch our next Web Engineering program starting on February 1, 2021.</p><p>Mimo is the most popular code-learning app, helping millions of learners make their first steps with programming.</p><p>Since the first time we talked, we realised we have been in fact working in the very same direction: democratising access to become a software engineer.</p><p>We're now teaming up to help those in their community that have realised they truly love programming and aspire to become professionals - able to work as software engineers and transform a hobby and passion in their profession.</p><p>Democratising access to opportunity - either by making it simple to move the first steps and explore the world of programming as Mimo does, or by helping people go pro as we do at Strive School - is what makes both teams excited.</p><ul><li>Download Mimo for <a href='https://itunes.apple.com/us/app/mimo-learn-how-to-code-through/id1133960732?mt=8&amp;at=1000lpyT'>iOS</a> or <a href='https://play.google.com/store/apps/details?id=com.getmimo'>Android</a> here.</li><li><a href='https://strive.school/'>Apply here</a> to our next Web Engineering cohort.",
+    "rate": 5
+
+}
+
+
+#####
+DELETE  http://localhost:5050/author/64b24cc6d781d80fe3adad50 HTTP/1.1
+Content-Type: application/json
+
+{
+    "category": "fantasy",
+    "title": "Titolo post 1",
+    "cover": "https://picsum.photos/500/300",
+    "readTime": {
+        "value": 30,
+        "unit": "minutes"
+    },
+    "author": {
+        "name": "Andrea",
+        "avatar": "https://picsum.photos/100/100"
+    },
+    "content": "Lorem ipsum dolor sit amet..."
+}
+
+#####
+GET http://localhost:5050/posts/title?postTitle=ibiza

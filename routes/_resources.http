@@ -1,0 +1,27 @@
+GET  http://localhost:5050/resources
+
+
+#####
+
+// GET per prendere isActive corrispondenti a true
+
+GET  http://localhost:5050/resources/isActive
+
+
+// GET per prendere l'età > di 26
+#####
+GET http://localhost:5050/resources/age
+
+
+// GET per prendere l'età > 26 o <= 30
+#####
+GET http://localhost:5050/resources/age?
+
+// GET per prendere i colori degli occhi "eyes" brown o blue
+
+#####
+
+GET  http://localhost:5050/resources/eyeColor
+
+
+

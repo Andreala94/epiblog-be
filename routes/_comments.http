@@ -1,0 +1,18 @@
+
+
+
+POST http://localhost:5050/posts/ HTTP/1.1
+Content-Type: application/json
+
+{
+
+    "category": "fantasy",
+    "title": "Post referencing",
+    "cover": "https://www.italia.it/content/dam/tdh/it/interests/lazio/roma/8-cose-imperdibili-per-vivere-il-natale-di-roma-da-veri-local/media/1600X1000_8_cose_imperdibili_natale_di_roma_hero.jpg",
+    "readTime": {
+        "value": 30,
+        "unit": "minutes"
+    },
+    "author": "64b97f9730367eea29048f94",
+    "content": "Lorem ipsum dolor sit amet..."
+}
